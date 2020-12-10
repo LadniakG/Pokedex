@@ -10,7 +10,7 @@ export default function PokemonList(props)
 
 
     const pokemonsToShow = pokemonsData.filter((pokemon) => {
-        if(pokemon.names.fr.toLowerCase().includes(props.searchText.toLowerCase()))
+        if(pokemon.names[props.language].toLowerCase().includes(props.searchText.toLowerCase()))
         {
             return true
         }
@@ -22,7 +22,7 @@ export default function PokemonList(props)
             {pokemonsToShow.map((item, id) => {
                 return(
                     <div key={item.id}>
-                        <PokemonCard id={item.id} name={item.names.fr} img={item.image}  type={item.types.map(function (typ, i){return(<span key={i} style={{backgroundColor : colors[typ]}}> {typ}</span>)})}/>
+                        <PokemonCard id={item.id} name={item.names[props.language]} img={item.image}  type={item.types.map(function (typ, i){return(<span key={i} style={{backgroundColor : colors[typ]}}> {typ}</span>)})}/>
                     </div>
                 );
             })}

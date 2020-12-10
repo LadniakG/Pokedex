@@ -3,7 +3,7 @@ import './style.css'
 import LanguageSelection from './LanguageSelection'
 import Logo from './Logo'
 
-export default function Header()
+export default function Header(props)
 {
     return(
         <div className="head">
@@ -11,7 +11,7 @@ export default function Header()
                 <Logo/>
             </div>
             <h1>
-                <LanguageSelection />
+                <LanguageSelection OnLanguageChange = {props.OnLanguageChange} />
             </h1>
         </div>
     )

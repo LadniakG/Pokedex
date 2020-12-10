@@ -9,17 +9,20 @@ function App()
 {
   const locale = 'en'
   const [searchText, setSearchText] = React.useState('');
+  const [language, setlanguage] = React.useState('fr');
 
   function handleChange(event)
   {
     setSearchText(event.target.value);
   }
 
+  
+
   return (
     <div>
-      <Header />
+      <Header OnLanguageChange={setlanguage}/>
       <SearchBar onChange={handleChange}/>
-      <PokemonList searchText={searchText} locale={locale}/>
+      <PokemonList searchText={searchText} locale={locale} language={language}/>
     </div>
   );
   
